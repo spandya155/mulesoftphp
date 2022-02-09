@@ -1,22 +1,22 @@
 <html>
 <head>
-	<title>Customer Details</title>
+	<title>Movies Details</title>
 	<link rel="stylesheet" href="css/Styles.css" type="text/css" />
 </head>
 <body>
-	<h1> Display Customer Details</h1>
+	<h1> Display Movies Details</h1>
 <?php
 	$conn=mysql_connect("localhost","root","");
 	$db=mysql_select_db("PHPTEST",$conn);
-	$qry = "SELECT * FROM CustomerDetails";
+	$qry = "SELECT * FROM Movies";
 	$result=mysql_query($qry, $conn);
 	echo "<table>
 	<tr>
 		<th>ID</th>
 		<th>NAME</th>
-		<th>MOBILE NO</th>
-		<th>EMAIL-ID</th>
-		<th>AMOUNT</th>
+		<th>Actor</th>
+		<th>Actress</th>
+		<th>Rating</th>
 		<th>EDIT</th>
 		<th>DELETE</th>
 	</tr>";

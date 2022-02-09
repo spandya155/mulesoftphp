@@ -1,10 +1,10 @@
 <html>
 <head>
-	<title>Insert Customer Details</title>
+	<title>Insert Movies Details</title>
 	<link rel="stylesheet" href="css/Styles.css" type="text/css" />
 </head>
 <body>
-	<h1>Add new Customer</h1>
+	<h1>Add new Movie</h1>
 	<form action="#">
 	<table>
 		<tr>
@@ -15,16 +15,16 @@
 			<td><input type='text' name='name' /></td>
 		</tr>
 		<tr>
-			<td>Mobile No.:</td>
-			<td><input type='tel' name='mobile' /></td>
+			<td>Actor:</td>
+			<td><input type='text' name='actor' /></td>
 		</tr>
 		<tr>
-			<td>E-Mail ID:</td>
-			<td><input type='email' name='email' /></td>
+			<td>Actress:</td>
+			<td><input type='text' name='actress' /></td>
 		</tr>
 		<tr>
-			<td>Amount:</td>
-			<td><input type='text' name='amount' value='0' /></td>
+			<td>Rating:</td>
+			<td><input type='text' name='rating' value='0' /></td>
 		</tr>
 		<tr>
 			<td><input type='submit' name='submit' value='Insert' /></td>
@@ -36,7 +36,7 @@
 if(isset($_GET['submit'])) {
 	$conn=mysql_connect("localhost","root","");
 	$db=mysql_select_db("PHPTEST",$conn);
-	$qry = "INSERT INTO CustomerDetails (Name, Email, Mobile, Amount) VALUES ('". $_GET['name']. "', '". $_GET['email']. "', '". $_GET['mobile']. "', ". $_GET['amount']. ");";
+	$qry = "INSERT INTO Movies (Name, Actor, Actress, Rating) VALUES ('". $_GET['name']. "', '". $_GET['actor']. "', '". $_GET['actress']. "', ". $_GET['rating']. ");";
 	$result = mysql_query($qry, $conn);
 	echo $result;
 	if($result) {
